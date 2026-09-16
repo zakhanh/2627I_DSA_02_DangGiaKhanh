@@ -1,0 +1,4 @@
+(a) Cấu trúc dữ liệu thu được chứa tổng cộng 1 thành phần liên thông.
+(b) Cài đặt quick-find: Có (N+2)(N-1)/2 lần cập nhật mảng.
+(c) Cài đặt quick-union: Thao tác find(0) thực hiện n lần truy cập mảng.
+(d) Cài đặt weighted quick-union: Thao tác find(0) thực hiện 1 lần truy cập mảng.
