@@ -1,0 +1,5 @@
+Không nên lưu trữ dữ liệu trong LinkedList cho cả hai thuật toán này, cụ thể vì các lý do sau:
+
++ Thứ nhất (với Selection Sort): Việc áp dụng trên LinkedList làm phát sinh thêm bộ nhớ để lưu trữ các con trỏ (pointer/node overhead). Đồng thời, do các node nằm rải rác trên vùng nhớ Heap, nó hoàn toàn không tận dụng được cơ chế lưu bộ nhớ đệm (Cache Locality) cũng như cơ chế nạp trước dữ liệu/dự đoán của CPU (Hardware Prefetching) giống như cấu trúc mảng (Array/ArrayList).
+
++ Thứ hai (với Insertion Sort): Dù có một ưu điểm nhỏ là thao tác ngắt và nối lại liên kết để chèn phần tử vào vị trí mới diễn ra rất nhanh (O(1)), nhưng việc duyệt tiến/lùi để tìm đúng vị trí chèn vẫn phải quét tuần tự (O(N)). Đặc biệt, nó cũng không tận dụng được bộ nhớ đệm của CPU (gây ra tình trạng cache miss liên tục), khiến cho hiệu năng thực tế chậm hơn rất nhiều so với khi triển khai trên mảng.
